@@ -1,0 +1,15 @@
+name: 'stock_pipeline'
+version: '1.0.0'
+config-version: 2
+profile: 'stock_pipeline'
+
+model-paths: ["models"]
+
+models:
+  stock_pipeline:
+    bronze:
+      +materialized: view
+    silver:
+      +materialized: table
+    gold:
+      +materialized: table
